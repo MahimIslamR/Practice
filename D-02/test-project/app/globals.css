@@ -1,0 +1,7 @@
+/* app/globals.css */
+@import "tailwindcss";
+
+/* Pass daisyUI configuration parameters directly to the plugin directive */
+@plugin "daisyui" {
+  themes: light, dark;
+}

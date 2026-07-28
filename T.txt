@@ -1,0 +1,68 @@
+npx create-next-app@latest
+npm install -D daisyui@latest
+
+tailwind test code - "<div className="m-10 p-10 bg-red-500 text-white text-4xl font-bold text-center rounded-xl shadow-2xl">
+      If Tailwind is working, this is a large, centered white text on a bright red box!
+    </div>"
+
+
+fbs, 2hrs . er por 1 digit 
+urea, ast, alt- round.
+troponin 500
+
+
+
+import { getProductdata } from "@/app/components/database";
+import Link from "next/link";
+
+export default async function ProductDetails({ params }) {
+  // 1. Get the dynamic id from URL
+  const { id } = await params;
+
+  // 2. Fetch all products/packages
+  const products = await getProductdata();
+
+  // 3. Find the exact product matching the ID
+  const product = products.find((item) => String(item.id) === String(id));
+
+  // 4. Handle invalid/missing IDs gracefully
+  if (!product) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center">
+        <h2 className="text-2xl font-bold">Package Not Found</h2>
+        <Link href="/" className="btn btn-primary mt-4">
+          Back to Home
+        </Link>
+      </div>
+    );
+  }
+
+  // 5. Render full package details
+  return (
+    <div className="hero bg-base-100 min-h-screen">
+      <div className="hero-content flex-col lg:flex-row gap-8">
+        <img
+          src={product.image}
+          alt={product.title}
+          className="max-w-md rounded-lg shadow-2xl"
+        />
+        <div>
+          <h1 className="text-5xl font-bold">{product.title}</h1>
+          <p className="py-6 text-lg">{product.description}</p>
+          
+          <div className="stat bg-base-200 rounded-box mb-6 w-fit">
+            <div className="stat-title">Package Price</div>
+            <div className="stat-value text-primary">${product.price}</div>
+          </div>
+
+          <div className="flex gap-3">
+            <button className="btn btn-success">Book Package</button>
+            <Link href="/" className="btn btn-outline">
+              ← Back to Home
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
