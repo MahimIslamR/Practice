@@ -60,7 +60,7 @@ export default function Footer() {
                         </a>
                     </div>
                 </nav>
-            </footer>a
+            </footer>
         </div>
     );
 }

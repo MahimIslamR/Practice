@@ -20,6 +20,7 @@ export default async function ProductDetails({ params }) {
                     <p>{pd.description}</p>
                     <div className="card-actions justify-end">
                         <button className="btn btn-primary bg-cyan-200">{pd.price}</button>
+                        <button  className="btn btn-primary bg-cyan-200">Add To Cart</button>
                     </div>
                 </div>
             </div>

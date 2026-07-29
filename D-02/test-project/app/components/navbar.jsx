@@ -1,3 +1,4 @@
+import { ShoppingCart } from "lucide-react";
 import Link from "next/link";
 
 export default function Navber() {
@@ -44,7 +45,7 @@ export default function Navber() {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn bg">Button</a>
+                    <Link href='/cart' ><ShoppingCart className="btn border-0 text-green-500 "></ShoppingCart></Link>
                 </div>
             </div>
         </div>

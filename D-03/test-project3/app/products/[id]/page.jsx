@@ -1,3 +1,4 @@
+import AddToCartButton from "@/app/components/addtocart";
 import { getProductdata } from "@/app/components/database";
 
 export default async function productDetails({ params }) {
@@ -32,7 +33,7 @@ export default async function productDetails({ params }) {
                             <button className="btn btn-primary">Buy Now</button>
                         </div>
                         <div className="">
-                            <button className="btn btn-primary">Add to cart</button>
+                            <AddToCartButton product={singlepd}></AddToCartButton>
                         </div>
                     </div>
                 </div>
