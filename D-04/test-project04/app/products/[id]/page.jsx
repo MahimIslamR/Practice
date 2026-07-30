@@ -1,3 +1,5 @@
+
+import AddToCartButton from "@/app/components/addtocartbutton";
 import { getProductsdata } from "@/app/components/daatabase/data";
 
 
@@ -37,8 +39,8 @@ export default async function productDetails({ params }) {
                             <p className="mb-5">{singlepd.description}
                             </p>
                             <button className="btn  bg-yellow-500 text-black border-orange-500">${singlepd.price}</button>
-                            <button className="btn btn-primary ml-5">Buy Now</button>
-                            <button className="btn bg-green-300 ml-5">Add to Cart</button>
+                            <button className="btn btn-primary ml-5 mr-5">Buy Now</button>
+                            <AddToCartButton product = {singlepd}></AddToCartButton>
                         </div>
                     </div>
                 </div>

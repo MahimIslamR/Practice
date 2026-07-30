@@ -9,11 +9,10 @@ export default function CartProvider({ children }) {
     const [cart, setCart] = useState([]);
 
 
-    useEffect(()=>{
+    useEffect(()=>
         localStorage.setItem("my_cart",JSON.stringify(cart))
-    }
-        
-        ,[cart]);
+
+         ,[cart]);
 
 
     const addToCart= (pd) => {
@@ -26,7 +25,7 @@ export default function CartProvider({ children }) {
             }
             return [...prevCart,{...pd , quantity : 1} ];
         });
-    }
+    };   
 
 
 

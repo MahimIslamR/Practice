@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { getProductsData, getProfileData } from "./utils/page";
+import { Bentham } from "next/font/google";
+import AddToCartButton from "./components/addtocartbutton";
 
 
 
@@ -24,6 +26,7 @@ export default async function Home() {
                 <div className={`flex items-center gap-3 ${isEven ? "flex-row lg:justify-start" : "flex-row-reverse lg:justify-start"}`}>
                   <button className="btn btn-primary">${pd.price}</button>
                   <button className="btn bg-purple-900 border-blue-200 text-white ml-3"><Link href={`productdetails/${pd.id}`}>View Detalis</Link></button>
+                  <AddToCartButton product={pd}></AddToCartButton>
                 </div>
               </div>
             </div>

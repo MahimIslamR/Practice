@@ -5,6 +5,7 @@ import { CartContext } from "@/app/components/cartprovider"; // Update with your
 
 export default function AddToCartButton({ product }) {
     const { addToCart } = useContext(CartContext);
+    
 
     return (
         <button 
